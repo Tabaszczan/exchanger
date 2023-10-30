@@ -1,4 +1,19 @@
-# Exchange app
+# Currency Exchange API
+
+
+## Table of Contents
+
+- [Currency Exchange API](#currency-exchange-api)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Running the Application](#running-the-application)
+  - [Usage](#usage)
+    - [API Endpoints](#api-endpoints)
+    - [Loading Data from External API](#loading-data-from-external-api)
+  - [Tests](#tests)
+    - [Run tests](#run-tests)
 
 ## Getting Started
 
