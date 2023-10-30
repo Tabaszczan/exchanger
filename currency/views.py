@@ -3,11 +3,16 @@ from rest_framework import generics, status
 from .models import Currency, ExchangeRate
 from .serializers import CurrencySerializer, ExchangeRateSerializer
 from rest_framework.views import APIView
+from rest_framework import filters
 
 
 class CurrencyListAPIView(generics.ListAPIView):
     queryset = Currency.objects.all()
     serializer_class = CurrencySerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = [
+        "code",
+    ]
 
 
 class ExchangeRateAPIView(APIView):

@@ -17,6 +17,7 @@ from celery.schedules import crontab
 
 env = environ.Env()
 environ.Env.read_env()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -135,6 +136,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 FIXER_API_KEY = env("FIXER_API_KEY")
 
+# DRF settings
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 50,
+}
 
 # Celery settings
 CELERY_BROKER_URL = env("CELERY_BROKER_URL")
